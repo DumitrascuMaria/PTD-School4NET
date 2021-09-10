@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SchoolOf.Common;
+using SchoolOf.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +35,12 @@ namespace SchoolOf.ShoppingCart
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolOf.ShoppingCart", Version = "v1" });
             });
+            services.AddScoped<DatabaseContext>();
+            services.AddScoped< UnitOfWork, UnitOfWork > ();
+                
+            services.Configure<DbSettings>(Configuration.GetSection(nameof(DbSettings)));//aduc informatiile din appsetings
+            //scoped=va fi returnata aceeasi instanta de clasa 
+            //transient=in acelasi scenariu, ai un req si 7 servicii, toate cele 7 serv vor primi o instanta noua
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

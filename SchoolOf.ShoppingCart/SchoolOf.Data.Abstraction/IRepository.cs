@@ -8,7 +8,7 @@ namespace SchoolOf.Data.Abstraction
 {
     public interface IRepository<T> where T : BaseEntityModel
     {
-        T GetById(long id);
+        Task<T> GetById(long id);
        T  Add(T entity);
         Task<bool> DeleteByIdAsync(long id);
         Task<T> UpdateAsync(T entity);

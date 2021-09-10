@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolOf.Data.Abstraction
 {
-    public interface BaseEntityModel
+    public abstract class BaseEntityModel
     {
         public long Id { get; set; }
         public bool IsDeleted { get; set; }

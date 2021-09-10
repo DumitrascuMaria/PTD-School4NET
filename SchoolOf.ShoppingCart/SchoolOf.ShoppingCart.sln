@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolOf.ShoppingCart", "SchoolOf.ShoppingCart\SchoolOf.ShoppingCart.csproj", "{ED742B4D-C2FA-4799-A227-FD49244F906E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolOf.ShoppingCart", "SchoolOf.ShoppingCart\SchoolOf.ShoppingCart.csproj", "{ED742B4D-C2FA-4799-A227-FD49244F906E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoolOf.Dtos", "ShoolOf.Dtos\ShoolOf.Dtos.csproj", "{D105C247-AF6E-444B-8C27-F632E4CEAFBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoolOf.Dtos", "ShoolOf.Dtos\ShoolOf.Dtos.csproj", "{D105C247-AF6E-444B-8C27-F632E4CEAFBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolOf.Data.Abstraction", "SchoolOf.Data.Abstraction\SchoolOf.Data.Abstraction.csproj", "{D60AAD8B-3767-4114-B485-4A5612648DD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolOf.Data.Abstraction", "SchoolOf.Data.Abstraction\SchoolOf.Data.Abstraction.csproj", "{D60AAD8B-3767-4114-B485-4A5612648DD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolOf.Data.Models", "SchoolOf.Data.Models\SchoolOf.Data.Models.csproj", "{5FAFD0E0-3E1B-426E-A26E-AB2A75E32093}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolOf.Data.Models", "SchoolOf.Data.Models\SchoolOf.Data.Models.csproj", "{5FAFD0E0-3E1B-426E-A26E-AB2A75E32093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolOf.Data", "SchoolOf.Data\SchoolOf.Data.csproj", "{8252CEB9-96FE-485C-8162-7C8A760C916C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolOf.Common", "SchoolOf.Common\SchoolOf.Common.csproj", "{8CA41F6D-5CAC-4F2A-B9F0-7C0776A822EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{5FAFD0E0-3E1B-426E-A26E-AB2A75E32093}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FAFD0E0-3E1B-426E-A26E-AB2A75E32093}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FAFD0E0-3E1B-426E-A26E-AB2A75E32093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8252CEB9-96FE-485C-8162-7C8A760C916C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8252CEB9-96FE-485C-8162-7C8A760C916C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8252CEB9-96FE-485C-8162-7C8A760C916C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8252CEB9-96FE-485C-8162-7C8A760C916C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA41F6D-5CAC-4F2A-B9F0-7C0776A822EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA41F6D-5CAC-4F2A-B9F0-7C0776A822EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA41F6D-5CAC-4F2A-B9F0-7C0776A822EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA41F6D-5CAC-4F2A-B9F0-7C0776A822EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

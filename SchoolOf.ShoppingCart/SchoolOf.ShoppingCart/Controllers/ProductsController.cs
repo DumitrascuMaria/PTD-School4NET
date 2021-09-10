@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SchoolOf.Data.Abstraction;
+using SchoolOf.Data.Models;
+using ShoolOf.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +13,36 @@ namespace SchoolOf.ShoppingCart.Controllers
     [ApiController] //este un controller API nu avem view
     public class ProductsController : ControllerBase
     {
+        private readonly IUnitOfWork _unitOfWork;
+        public ProductsController(IUnitOfWork unitOfWork)
+        {
+            this._unitOfWork = unitOfWork;
+        }
         //returneaza o lista de produse statice
         [HttpGet] //verbe pt a initia un request http
         [ProducesResponseType(typeof(IEnumerable<ShoolOf.Dtos.ProductDto>),200)]
-        public async Task<IActionResult> getProducts()
+        public async Task<IActionResult> GetProducts()
         {
             //iactionresult=returneaza o lista mai ampla de modele
             //async=thread-ul care a pornit procesarea se intoarce in threadpool, comunicare asincrona
-            var mylistofPtoducts = new List<ShoolOf.Dtos.ProductDto>();
-            mylistofPtoducts.Add(new ShoolOf.Dtos.ProductDto
+            var myListOfProducts = new List<ShoolOf.Dtos.ProductDto>();
+            var productsFromDb = this._unitOfWork.GetRepository<Product>().Find(product => !product.IsDeleted);
+
+            foreach (var p in productsFromDb)
             {
-                Category = "test category",
-                Description = " test description",
-                Id = 10,
-                Image="no image yet",
-                Name="test product",
-                Price=100
-            }) ;
-            return Ok(mylistofPtoducts); //(sau not found) ok= returneaza un hhtp status 200
+                myListOfProducts.Add(new ProductDto
+                {
+                    Category = p.Category,
+                    Description = p.Description,
+                    Id = p.Id,
+                    Image = p.Image,
+                    Name = p.Name,
+                    Price = p.Price
+                });
+            }
+
+
+            return Ok(myListOfProducts); //(sau not found) ok= returneaza un hhtp status 200
             
             
         }

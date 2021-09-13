@@ -37,6 +37,17 @@ namespace SchoolOf.Data
             modelBuilder.Entity<Product>().Property(x => x.Image).IsRequired();
             modelBuilder.Entity<Product>().Property(x => x.Category).IsRequired().HasMaxLength(100);
             modelBuilder.Entity<Product>().HasData(ProductInitialData.GetData());
+
+            modelBuilder.Entity<Order>().HasKey(x => x.Id);
+            modelBuilder.Entity<Order>().Property(x => x.Name).IsRequired().HasMaxLength(100);
+            modelBuilder.Entity<Order>().Property(x => x.Address).IsRequired().HasMaxLength(500);
+            modelBuilder.Entity<Order>().Property(x => x.Email).IsRequired().HasMaxLength(255);
+            modelBuilder.Entity<Order>().Property(x => x.PhoneNo).IsRequired().HasMaxLength(10);
+            modelBuilder.Entity<Order>().Property(x => x.Total).IsRequired();
+
+            modelBuilder.Entity<Cart>().HasKey(x => x.Id);
+            modelBuilder.Entity<Cart>().Property(x => x.Status).IsRequired();
+
         }
 
         //migrarea te ajuta sa tii sincronizata bd si modelul

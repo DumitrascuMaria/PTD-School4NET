@@ -1,5 +1,4 @@
 ﻿using SchoolOf.Common.Enums;
-using SchoolOf.Data.Abstraction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolOf.Data.Models
+namespace ShoolOf.Dtos
 {
-    public class Cart: BaseEntityModel
+    class CartDto
     {
+        public long Id { get; set; }
         [EnumDataType(typeof(Status))]
         public Status Status { get; set; }
-
-    } 
+    }
 }
